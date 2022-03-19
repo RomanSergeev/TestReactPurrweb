@@ -5,7 +5,7 @@
  * Slider operates with only two containers that change their content repeatedly during animations.
  * Sliding direction is optimal (sliding through least amount of elements):
  * Example: if clicking on 8th element in 10-element list, when active element is 1st, the slider will scroll through 1 -> 10 -> 9 -> 8.
- * Animation used is based on window.RequestAnimationFrame.
+ * Animation used is based on window.requestAnimationFrame.
  * Slider is tight with its contents (i.e. has minimal necessary width and height).
  * Some customization is easily added, like custom animation duration or dimensions.
  * Don't use the same HTML Element in two sliders!
@@ -38,8 +38,11 @@ function createSliderFromHTMLElementArray(HTMLElementArray, HTMLElementInsertInt
 	// can be passed as a parameter (for further customization)
 	const ANIMATION_DURATION           = 300;
 	
-	var HTMLElementArrayUsed = HTMLElementArray.slice(0, 10);
+	var HTMLElementArrayUsed = HTMLElementArray.slice(0, MAX_CAROUSEL_LENGTH);
 	const len = HTMLElementArrayUsed.length;
+	var trunc = function(x) {
+		return (x + len) % len;
+	}
 	
 	// get dimensions of central container
 	var mainContainerWidth  = Math.max(MIN_SLIDER_WIDTH , Math.max.apply(null, HTMLElementArrayUsed.map(x => x.offsetWidth )));
@@ -55,8 +58,6 @@ function createSliderFromHTMLElementArray(HTMLElementArray, HTMLElementInsertInt
 	var divLeftScroller       = document.createElement("div");
 	var divRightScroller      = document.createElement("div");
 	var divCenterContainer    = document.createElement("div");
-	var divSlideLeft          = document.createElement("div");
-	var divSlideLeftData      = document.createElement("div");
 	var divSlideMiddle        = document.createElement("div");
 	var divSlideMiddleData    = document.createElement("div");
 	var divSlideRight         = document.createElement("div");
@@ -81,7 +82,7 @@ function createSliderFromHTMLElementArray(HTMLElementArray, HTMLElementInsertInt
 			return this.rightToLeftFlag ? 1 : -1;
 		},
 		getNextSlideIndex: function() {
-			return (this.selectedSlide + this.rightToLeftMultiplier() + len) % len;
+			return trunc(this.selectedSlide + this.rightToLeftMultiplier());
 		},
 		launchAnimation: function() {
 			var nextSlideIndex = this.getNextSlideIndex();
@@ -102,9 +103,9 @@ function createSliderFromHTMLElementArray(HTMLElementArray, HTMLElementInsertInt
 		slideTo: function(index) {
 			this.isAnimated = true;  // lock
 			var diff = index - this.selectedSlide;
-			this.rightToLeftFlag = (diff + len) % len <= len / 2;
+			this.rightToLeftFlag = trunc(diff) <= len / 2;
 			this.updateBottomIndicator(index);
-			var numAnimations = Math.min((diff + len) % len, (-diff + len) % len);
+			var numAnimations = Math.min(trunc(diff), trunc(-diff));
 			this.mainAnimation.setDuration(ANIMATION_DURATION / numAnimations);
 			this.times = numAnimations;
 			this.launchAnimation();
@@ -151,8 +152,8 @@ function createSliderFromHTMLElementArray(HTMLElementArray, HTMLElementInsertInt
 		})(i);
 		ulBottomButtons.appendChild(liBottomButton);
 	}
-	divLeftScroller .addEventListener("click", event => slider.onClickAction(event, (slider.selectedSlide + len - 1) % len));
-	divRightScroller.addEventListener("click", event => slider.onClickAction(event, (slider.selectedSlide + 1) % len));
+	divLeftScroller .addEventListener("click", event => slider.onClickAction(event, trunc(slider.selectedSlide - 1)));
+	divRightScroller.addEventListener("click", event => slider.onClickAction(event, trunc(slider.selectedSlide + 1)));
 	
 	divSlider.style.width = mainContainerWidth + 2 * SLIDER_BUTTON_WIDTH + "px";
 	divSlider.style.height = mainContainerHeight + SLIDER_BOTTOM_BUTTONS_HEIGHT + "px";
