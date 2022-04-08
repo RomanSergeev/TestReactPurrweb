@@ -1,0 +1,44 @@
+#cookiesHolder {
+	position: fixed;
+	align-items: center;
+	justify-content: space-between;
+	width: calc(100% - 120px);
+	height: 100px;
+	left: 0;
+	bottom: 0;
+	padding-bottom: 0;
+	padding-right: 20px;
+	font-size: 14px;
+	background-color: #333;
+	z-index: 1;
+	transition: bottom 1s ease;
+}
+
+#cookiesHolder.hidden {
+	bottom: -100px;
+}
+
+#cookiesHolder button {
+	width: 140px;
+    height: 60px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #555;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cookiesHolder button:hover {
+    background-color: #777;
+}
+
+#cookiesHolder button:hover:active {
+    background-color: #444;
+}
+
+@media only screen and (max-width: 1200px) {
+	#cookiesHolder {
+		width: calc(100% - 45px);
+	}
+}

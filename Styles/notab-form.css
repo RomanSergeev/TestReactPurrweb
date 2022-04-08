@@ -1,0 +1,83 @@
+#sectionForm {
+	justify-content: center;
+}
+
+form {
+	width: 818px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    row-gap: 23px;
+}
+
+form input,
+form textarea {
+	display: block;
+    padding: 27px 20px;
+    line-height: 25px;
+    border: 1px solid #5C5C5C;
+    border-radius: 10px;
+	flex: 1;
+}
+
+form input[type="submit"] {
+	margin-top: 50px;
+	width: 400px;
+	align-self: center;
+	background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+	cursor: pointer;
+	border-width: 2px;
+}
+
+form input[type="submit"]:hover {
+	background-color: #333;
+}
+
+form input[type="submit"]:active {
+	background-color: #222;
+}
+
+form input[type="text"].invalid,
+form textarea.invalid {
+	border: 2px solid red;
+}
+
+form textarea {
+	font-family: 'Noto sans';
+	flex-basis: 100px;
+	resize: none;
+}
+
+#inputBreaker {
+	width: 23px;
+	height: 0;
+}
+
+#twoInputsHolder {
+	display: flex;
+	flex-direction: row;
+	gap: 23px;
+}
+
+#gleamForm {
+	width: 336.78px;
+	height: 341.42px;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+	opacity: 1;
+	filter: blur(250px);
+}
+
+@media only screen and (max-width: 1200px) {
+	form {
+		width: 550px;
+	}
+
+	#twoInputsHolder {
+		flex-direction: column;
+	}
+}

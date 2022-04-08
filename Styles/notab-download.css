@@ -1,0 +1,78 @@
+.dl {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dl__downloadText {
+	font-size: 35px;
+	font-weight: bold;
+	line-height: 70px;
+}
+
+.dl__buttonsHolder {
+	display: flex;
+	flex-direction: row;
+}
+
+.dl__buttonDownload {
+	display: inline-block;
+	height: 50px;
+	margin-top: 0;
+	margin-left: 20px;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 2px solid white;
+}
+
+.dl__buttonDownload table {
+	position: relative;
+	top: -5px;
+}
+
+.dl__buttonDownload img {
+	padding-right: 10px;
+}
+
+.dl__applePreSpan {
+	font-size: 14px;
+}
+
+.dl__appleMainSpan {
+	font-size: 25px;
+}
+
+.dl__googlePreSpan {
+	font-size: 14px;
+}
+
+.dl__googleMainSpan {
+	font-size: 25px;
+}
+
+#sectionDownload2 {
+	flex-direction: column;
+}
+
+#sectionDownload2 .dl__downloadText {
+	font-size: 24px;
+}
+
+#sectionDownload2 .dl__buttonDownload {
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+@media only screen and (max-width: 1200px) {	
+	.dl {
+		flex-direction: column;
+	}
+	
+	.dl__buttonsHolder {
+		flex-direction: column;
+	}
+	
+	.dl__buttonDownload {
+		margin-top: 20px;
+		margin-left: 0;
+	}
+}

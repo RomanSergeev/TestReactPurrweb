@@ -1,0 +1,55 @@
+footer {
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	align-items: center;
+	row-gap: 100px;
+	text-align: left;
+}
+
+footer>div {
+	position: relative;
+	display: flex;
+    flex-direction: column;
+}
+
+#terms {
+    row-gap: 20px;
+}
+
+#contact {
+    row-gap: 10px;
+}
+
+#contact p:first-child {
+	font-weight: bold;
+}
+
+#gleamFooter {
+	width: 405.99px;
+	height: 411.6px;
+	
+	left: -100px;
+	background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+	opacity: .3;
+	filter: blur(138.347px);
+	transform: rotate(5.78deg);
+}
+
+@media only screen and (max-width: 1200px) {
+	footer {
+		flex-direction: column;
+		text-align: center;
+		padding-bottom: 25px;
+	}
+	
+	#contact br {
+		display: none;
+	}
+	
+	#gleamFooter {
+		width: 224.67px;
+		height: 227.77px;
+		bottom: 0;
+		left: 0;
+	}
+}

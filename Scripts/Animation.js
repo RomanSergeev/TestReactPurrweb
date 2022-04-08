@@ -86,5 +86,5 @@ Animation.prototype.onFinish = function() {
 
 Animation.prototype.onUpdate = function(progress) {
 	this.cancel();
-	throw "You should override Animation.onUpdate() method.";
+	console.warn("You should override Animation.onUpdate() method.");
 }

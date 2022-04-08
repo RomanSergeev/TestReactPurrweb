@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>NoTab</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+  <link rel="stylesheet" href="styles/notab-main.css" />
+  <link rel="stylesheet" href="styles/notab-cookies.css" />
+  <link rel="stylesheet" href="styles/notab-header.css" />
+  <link rel="stylesheet" href="styles/notab-intro.css" />
+  <link rel="stylesheet" href="styles/notab-download.css" />
+  <link rel="stylesheet" href="styles/notab-membership.css" />
+  <link rel="stylesheet" href="styles/notab-mission.css" />
+  <link rel="stylesheet" href="styles/notab-getintouch.css" />
+  <link rel="stylesheet" href="styles/notab-form.css" />
+  <link rel="stylesheet" href="styles/notab-footer.css" />
+  <script src="Scripts/Notab.js"></script>
+</head>
+<body>
+
+<header>
+  <img alt="cube1" id="cube1" src="Img/Cube1.png" />
+  <span id="headerNoTab">NoTab</span>
+  <div id="loginGroup">
+    <img alt="profile" src="Img/Profile.png" />
+	<a id="loginLink" href="#">Login</a>
+  </div>
+</header>
+<div id="cookiesHolder" class="hidden">
+	<p>We use cookies to improve your experience on our site. By using our site you consent cookies.</p>
+	<button id="buttonAcceptCookies">OK</button>
+</div>
+<section id="sectionIntro">
+	<div id="introLeft">
+		<p id="introText1">A platform<br>that works smarter</p>
+		<div id="lineGroup">
+			<div class="gleam" id="gleamIntro1"></div>
+			<svg id="lineSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150">
+				<g stroke="white">
+					<path stroke-width=4 d="M5 145 95 5" />
+				</g>
+			</svg>
+			<p id="introText2">NoTab allows bars & nightclubs<br>to manage, understand, and grow<br>their business from a single dashboard</p>
+		</div>
+	</div>
+	<div id="introRight">
+		<div class="gleam testResponsive" id="gleamIntro2"></div>
+		<div class="gleam" id="gleamIntro3"></div>
+		<img alt="phone" src="Img/Phone.png" />
+	</div>
+</section>
+<section class="dl">
+	<p class="dl__downloadText">DOWNLOAD OUR APP</p>
+	<div class="dl__buttonsHolder">
+		<div class="dl__buttonDownload">
+			<table>
+			<tr><td rowspan=2>
+				<img alt="phone" src="Img/Iphone.png" />
+			</td><td>
+				<span class="dl__applePreSpan">Download on the</span>
+			</td></tr>
+			<tr><td>
+				<span class="dl__appleMainSpan">App Store</span>
+			</td></tr>
+			</table>
+		</div>
+		<div class="dl__buttonDownload">
+			<table>
+			<tr><td rowspan=2>
+				<img alt="playStore" src="Img/PlayStore.png" />
+			</td><td>
+				<span class="dl__googlePreSpan">GET IT ON</span>
+			</td></tr>
+			<tr><td>
+				<span class="dl__googleMainSpan">Google Play</span>
+			</td></tr>
+			</table>
+		</div>
+	</div>
+</section>
+<section id="sectionMembership">
+	<div class="membershipElement">
+		<p class="membershipElement__paragraph">Would like to become<br>a member, please<br>contact us</p>
+		<a class="membershipElement__link" href="#">support@notab.com</a>
+	</div>
+	<div class="membershipElement">
+		<p class="membershipElement__paragraph">Already a partner?</p>
+		<a class="membershipElement__link" href="#">Login</a>
+	</div>
+</section>
+<section id="sectionMission">
+	<div class="pSection">
+		<div class="gleam" id="gleamMission"></div>
+		<p class="pSection__firstP">Our mission and vision</p>
+		<p class="pSection__secondP">While technology is our sweet spot, we’ve developed our vision alongside our customers to ensure your everyday problems are solved through simplistic tools. And as your business grows, we’ll grow right alongside with you.</p>
+	</div>
+	<img alt="phone" src="Img/Phone.png" />
+</section>
+<section id="sectionGetInTouch">
+	<div class="gleam" id="gleamGetInTouch"></div>
+	<div class="pSection pSection_lastParagraphSection">
+		<p class="pSection__firstP">Get In Touch</p>
+		<p class="pSection__secondP">Have questions about NoTab or just want to say hello?<br> Drop us a line and a member of our team will getback to you shortly.</p>
+	</div>
+</section>
+<section id="sectionForm">
+	<div class="gleam" id="gleamForm"></div>
+	<form action="#" onSubmit="return validate(this);">
+		<input type="text" placeholder="Name" />
+		<input type="text" placeholder="Venue Name" />
+		<div id="twoInputsHolder">
+			<input type="text" placeholder="Venue City" />
+			<input type="text" placeholder="State City" />
+		</div>
+		<input type="text" placeholder="Email" />
+		<input type="text" placeholder="Subject" />
+		<textarea placeholder="Message"></textarea>
+		<input type="submit" value="Send" />
+	</form>
+</section>
+<section id="sectionDownload2" class="dl">
+	<p class="dl__downloadText">DOWNLOAD OUR APP</p>
+	<div class="dl__buttonsHolder">
+		<div class="dl__buttonDownload">
+			<table>
+			<tr><td rowspan=2>
+				<img alt="iPhone" src="Img/Iphone.png" />
+			</td><td>
+				<span class="dl__applePreSpan">Download on the</span>
+			</td></tr>
+			<tr><td>
+				<span class="dl__appleMainSpan">App Store</span>
+			</td></tr>
+			</table>
+		</div>
+		<div class="dl__buttonDownload">
+			<table>
+			<tr><td rowspan=2>
+				<img alt="playStore" src="Img/PlayStore.png" />
+			</td><td>
+				<span class="dl__googlePreSpan">GET IT ON</span>
+			</td></tr>
+			<tr><td>
+				<span class="dl__googleMainSpan">Google Play</span>
+			</td></tr>
+			</table>
+		</div>
+	</div>
+</section>
+<footer>
+	<div id="terms">
+		<p>Terms of use</p>
+		<p>Privacy policy</p>
+	</div>
+	<div id="contact">
+		<p>NOTAB</p>
+		<p>Contact us: <br>support@notab.com</p>
+		<p>&copy; 2020 - NoTab&reg;</p>
+	</div>
+	<div class="gleam" id="gleamFooter"></div>
+</footer>
+
+</body>
+</html>

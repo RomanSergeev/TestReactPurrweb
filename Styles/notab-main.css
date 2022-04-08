@@ -1,0 +1,72 @@
+body {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: white;
+	justify-content: center;
+	background-color: black;
+	font-size: 18px;
+	line-height: 25px;
+	font-family: 'Montserrat';
+	overflow-x: hidden;
+}
+
+body>* {
+	position: relative;
+	display: flex; /* all sections seem to have to be flex */
+	width: calc(100% - 200px);
+	padding: 0 100px 80px 100px;
+}
+
+p {
+	margin: 0;
+}
+
+a, a:visited {
+	color: white;
+}
+
+.gleam {
+	position: absolute;
+	pointer-events: none;
+}
+
+/* for mobile mode checks */
+.testResponsive {
+	/*display: none;*/
+}
+
+.pSection {
+	max-width: 400px;
+}
+
+.pSection__firstP {
+	font-family: 'Noto sans';
+	font-size: 51px;
+	line-height: 62px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.pSection__secondP {
+	font-size: 18px;
+	line-height: 25px;
+	font-weight: normal;
+	margin: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+	body>* {
+		padding: 0 25px 80px 25px;
+		width: calc(100% - 50px);
+	}
+	
+	.pSection__firstP {
+		font-size: 24px;
+	}
+	
+	.pSection__secondP {
+		font-size: 16px;
+	}
+}

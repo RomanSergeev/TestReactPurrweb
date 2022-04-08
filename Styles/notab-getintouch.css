@@ -1,0 +1,28 @@
+#sectionGetInTouch {
+	justify-content: center;
+}
+
+.pSection.pSection_lastParagraphSection {
+	max-width: 700px;
+	text-align: center;
+}
+
+#gleamGetInTouch {
+	width: 247.04px;
+	height: 250.45px;
+	top: -100px;
+	left: 300px;
+	background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+	opacity: 1;
+	filter: blur(250px);
+}
+
+@media only screen and (max-width: 1200px) {
+	.pSection.pSection_lastParagraphSection {
+		max-width: 400px;
+	}
+
+	.pSection.pSection_lastParagraphSection br {
+		display: none;
+	}
+}

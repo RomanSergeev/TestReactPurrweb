@@ -1,0 +1,35 @@
+header {
+	padding-top: 45px;
+	height: 76px;
+	align-items: center;
+}
+
+#loginLink {
+	margin-left: 20px;
+}
+
+#loginLink:hover {
+	font-weight: bold;
+}
+
+#headerNoTab {
+	font-size: 40px;
+	font-weight: bold;
+	margin-left: 40px;
+}
+
+#cube1 {
+	position: relative;
+	bottom: 5px;
+}
+
+#loginGroup {
+	display: flex;
+	align-items: center;
+	margin-left: 108px;
+}
+
+#lineSvg {
+	width: 100px;
+	height: 150px;
+}

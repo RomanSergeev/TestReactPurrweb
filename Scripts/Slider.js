@@ -77,7 +77,7 @@ function createSliderFromHTMLElementArray(HTMLElementArray, HTMLElementInsertInt
 		isAnimated: false,
 		rightToLeftFlag: true,
 		times: 0,
-		mainAnimation: new Animation(ANIMATION_DURATION),  // see Animation.js
+		mainAnimation: new Animation(),  // see Animation.js
 		rightToLeftMultiplier: function() {
 			return this.rightToLeftFlag ? 1 : -1;
 		},
@@ -143,19 +143,17 @@ function createSliderFromHTMLElementArray(HTMLElementArray, HTMLElementInsertInt
 	}
 	
 	// add event listeners
-	for (var i = 0; i < len; i++) {
+	for (let i = 0; i < len; i++) {
 		var liBottomButton = document.createElement("li");
 		liBottomButton.classList.add("sliderBottomButton");
 		liBottomButton.textContent = "•";
-		(function(j) {
-			liBottomButton.addEventListener("click", event => slider.onClickAction(event, j));
-		})(i);
+		liBottomButton.addEventListener("click", event => slider.onClickAction(event, i));
 		ulBottomButtons.appendChild(liBottomButton);
 	}
 	divLeftScroller .addEventListener("click", event => slider.onClickAction(event, trunc(slider.selectedSlide - 1)));
 	divRightScroller.addEventListener("click", event => slider.onClickAction(event, trunc(slider.selectedSlide + 1)));
 	
-	divSlider.style.width = mainContainerWidth + 2 * SLIDER_BUTTON_WIDTH + "px";
+	divSlider.style.width  = mainContainerWidth  + 2 * SLIDER_BUTTON_WIDTH      + "px";
 	divSlider.style.height = mainContainerHeight + SLIDER_BOTTOM_BUTTONS_HEIGHT + "px";
 	
 	// add classnames
@@ -189,7 +187,7 @@ function createSliderFromHTMLElementArray(HTMLElementArray, HTMLElementInsertInt
 	// hide added elements
 	HTMLElementArrayUsed.forEach(element => element.style.display = "none");
 	
-	// fill the two elements with initial values
+	// fill the current element with initial values
 	slider.fillContainerCurrent(0);
 	slider.updateBottomIndicator(0);
 	return slider;

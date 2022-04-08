@@ -1,0 +1,73 @@
+#sectionIntro {
+	justify-content: space-between;
+    /*padding-top: 20px;
+    padding-bottom: 20px;*/
+}
+
+#introLeft {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#introRight {
+	position: relative;
+}
+
+#introText1 {
+	font-size: 64px;
+	line-height: 72px;
+	font-weight: bold;
+}
+
+#lineSvg {
+	padding-right: 20px;
+}
+
+#introText2 {
+	display: inline-block;
+	font-size: 20px;
+}
+
+#gleamIntro1 {
+	width: 125px;
+	height: 125px;
+	background: rgba(96, 92, 234, 0.5);
+	filter: blur(100px);
+}
+
+#gleamIntro2 {
+	width: 662.63px;
+	height: 783.03px;
+	top: -400px;
+	background: rgba(250, 0, 255, 0.2);
+	filter: blur(250px);
+	transform: rotate(-105.26deg);
+}
+
+#gleamIntro3 {
+	width: 307.77px;
+	height: 631.35px;
+	left: -100px;
+	background: #000;
+	opacity: 0.4;
+	filter: blur(71.6833px);
+}
+
+@media only screen and (max-width: 1200px) {
+	#introRight {
+		left: 200px;
+	}
+	
+	#introText1 {
+		font-size: 35px;
+	}
+	
+	#introText2 {
+		font-size: 15px;
+	}
+	
+	#lineSvg {
+		display: none;
+	}
+}
